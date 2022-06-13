@@ -7,9 +7,15 @@ import Mushroom from "../assets/Mushroom.png";
 import Basil from "../assets/Basil.png";
 import Tomato from "../assets/Tomato.png";
 
-function Customize() {
+function Customize({toppings, setToppings}) {
+  const changeToppings=(name)=>{
+    let newToppings = JSON.parse(JSON.stringify(toppings));
+    newToppings[name] = !newToppings[name];
+    setToppings(newToppings);
+  }
   return (
 	 <div className='parent'>
+   {JSON.stringify(toppings)}
    <div className='child'>
    <div className='grandchild'>
    <img className='image toppings'src={Cheese} alt='cheese'/>
@@ -23,7 +29,11 @@ function Customize() {
 
    </div>
    </div>
-   <div className='child'>CheckOut</div>
+   <div className='child'>
+   <input type='checkbox' id='pineapple' name='pineapple' 
+   value='pineapple' onChange={()=>changeToppings('pineapple')}/>
+   <label htmlFor='pineapple'>Pineapple</label>
+   </div>
    </div>
   )
 }
