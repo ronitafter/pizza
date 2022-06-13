@@ -1,9 +1,11 @@
 import React from 'react'
+import './Header.css';
+
 
 export default function Header() {
   return (
-	 <div style={{padding:'10px 50px', background: 'black'}}>
-	 <div style={{color:'white'}}>Pizza Customization </div>
+	 <div className='main'>
+	 <div>Pizza Customization </div>
 	 </div>
   )
 }

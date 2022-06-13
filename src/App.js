@@ -8,8 +8,17 @@ import {
 import { Routes } from 'react-router-dom';
 import CheckOut from './components/CheckOut.js'
 import Customize from './components/Customize';
+import { useState } from 'react';
 
 function App() {
+  const[toppings,setToppings]= useState({
+     basil: false,
+    cheese: false,
+    mushroom: false,
+    olive: false,
+    pineapple: false,
+    tomato: false,
+  })
   return (
     <div className="App">
     <Header />

@@ -21,6 +21,11 @@
   width: 100%;
 }
 
+.toppings {
+  position: absolute;
+
+}
+
 /* .App {
   text-align: center;
 }
