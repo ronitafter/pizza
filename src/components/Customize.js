@@ -6,6 +6,8 @@ import Pineapple from "../assets/Pineapple.png";
 import Mushroom from "../assets/Mushroom.png";
 import Basil from "../assets/Basil.png";
 import Tomato from "../assets/Tomato.png";
+import { motion } from "framer-motion";
+
 
 function Customize({toppings, setToppings}) {
   const changeToppings=(name)=>{
@@ -24,18 +26,24 @@ function Customize({toppings, setToppings}) {
 
   return (
 	 <div className='parent'>
-   {JSON.stringify(toppings)}
    <div className='child'>
    <div className='grandchild'>
    <img className='image toppings'src={Cheese} alt='cheese'/>
    <img className='image toppings'src={Olive} alt='olive'/>
    <img className='image toppings'src={Pineapple} alt='pineapple'/>
    <img className='image toppings'src={Mushroom} alt='mushroom'/>
-   <img className='image toppings'src={Basil} alt='basil'/>
+   <motion.div
+  initial={{opacity:0}}
+  animate={{
+    y:toppings["basil"] ? 100 : -100,
+    opacity: toppings["basil"] ? 1 : 0,
+  }}
+  transition={{duration: 1}}
+  className="toppings2">
+  <img className='image toppings'src={Basil} alt='basil'/>
+  </motion.div>
    <img className='image toppings'src={Tomato} alt='tomato'/>
    <img className='image'src={Base} alt='pizza base'/>
-
-
    </div>
    </div>
    <div className='child'>
@@ -88,6 +96,7 @@ function Customize({toppings, setToppings}) {
    <span className='checkmark'></span>
   </label>
    </div>
+   {JSON.stringify(toppings)}
    </div>
   )
 }
