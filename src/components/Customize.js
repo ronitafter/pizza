@@ -28,21 +28,66 @@ function Customize({toppings, setToppings}) {
 	 <div className='parent'>
    <div className='child'>
    <div className='grandchild'>
-   <img className='image toppings'src={Cheese} alt='cheese'/>
-   <img className='image toppings'src={Olive} alt='olive'/>
-   <img className='image toppings'src={Pineapple} alt='pineapple'/>
-   <img className='image toppings'src={Mushroom} alt='mushroom'/>
-   <motion.div
-  initial={{opacity:0}}
+    <motion.div
+  initial={{ opacity: 0 }}
   animate={{
-    y:toppings["basil"] ? 100 : -100,
+    y: toppings["cheese"] ? 100 : -100,
+    opacity: toppings["cheese"] ? 1 : 0,
+  }}
+  transition={{ duration: 1 }}
+  className="toppings2">
+  <img className='toppings3' src={Cheese} alt="cheese" />
+  </motion.div>
+   <motion.div
+  initial={{ opacity: 0 }}
+  animate={{
+    y: toppings["olive"] ? 100 : -100,
+    opacity: toppings["olive"] ? 1 : 0,
+  }}
+  transition={{ duration: 1 }}
+  className="toppings2">
+  <img className='toppings3' src={Olive} alt="olive" />
+  </motion.div>
+  <motion.div
+  initial={{ opacity: 0 }}
+  animate={{
+    y: toppings["pineapple"] ? 100 : -100,
+    opacity: toppings["pineapple"] ? 1 : 0,
+  }}
+  transition={{ duration: 1 }}
+  className="toppings2">
+  <img className='toppings3' src={Pineapple} alt="pineapple" />
+  </motion.div>
+   <motion.div
+  initial={{ opacity: 0 }}
+  animate={{
+    y: toppings["mushroom"] ? 100 : -100,
+    opacity: toppings["mushroom"] ? 1 : 0,
+  }}
+  transition={{ duration: 1 }}
+  className="toppings2">
+  <img className='toppings3' src={Mushroom} alt="mushroom" />
+  </motion.div>
+  <motion.div
+  initial={{ opacity: 0 }}
+  animate={{
+    y: toppings["basil"] ? 100 : -100,
     opacity: toppings["basil"] ? 1 : 0,
   }}
-  transition={{duration: 1}}
+  transition={{ duration: 1 }}
   className="toppings2">
-  <img className='image toppings'src={Basil} alt='basil'/>
+  <img className='toppings3' src={Basil} alt="basil" />
   </motion.div>
-   <img className='image toppings'src={Tomato} alt='tomato'/>
+  <motion.div
+  initial={{ opacity: 0 }}
+  animate={{
+    y: toppings["tomato"] ? 100 : -100,
+    opacity: toppings["tomato"] ? 1 : 0,
+  }}
+  transition={{ duration: 1 }}
+  className="toppings2">
+  <img className='toppings3' src={Tomato} alt="tomato" />
+  </motion.div>
    <img className='image'src={Base} alt='pizza base'/>
    </div>
    </div>
@@ -96,14 +141,8 @@ function Customize({toppings, setToppings}) {
    <span className='checkmark'></span>
   </label>
    </div>
-   {JSON.stringify(toppings)}
    </div>
   )
 }
 
 export default Customize
-
-//  <input type='checkbox'
-//    id='pineapple' name='pineapple' 
-//    value='pineapple' onChange={()=>changeToppings('pineapple')}/>
-//    <label htmlFor='pineapple'>Pineapple</label>
