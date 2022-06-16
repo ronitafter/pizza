@@ -1,9 +1,20 @@
 import React from 'react';
+import './CheckOut.css';
 
+function CheckOut({toppings}) {
 
-function CheckOut() {
   return (
-	 <div><h1>checkOut</h1></div>
+	 <div className='main'>
+   <div>
+   <div>
+   <h1>mu toppings</h1>
+   {Object.keys(toppings).map((topping)=>{
+    return <p>{topping}</p>
+   })}
+   </div>
+   </div>
+   <div>success</div>
+   </div>
   )
 }
 

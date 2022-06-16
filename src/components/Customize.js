@@ -13,20 +13,27 @@ function Customize({toppings, setToppings}) {
 
     let navigate = useNavigate();
 
-
-  const changeToppings=(name)=>{
-    let newToppings = JSON.parse(JSON.stringify(toppings));
-    newToppings[name] = !newToppings[name];
-    setToppings(newToppings);
-  }
+  // const changeToppings=(name)=>{
+  //   let newToppings = JSON.parse(JSON.stringify(toppings));
+  //   newToppings[name] = !newToppings[name];
+  //   setToppings(newToppings);
+  // }
   
-  const onChange=(event,name)=>{
+  // const onChange=(event,name)=>{
+  //   let newToppings = JSON.parse(JSON.stringify(toppings));
+  //   newToppings[name] = event;
+  //   setToppings(newToppings);
+  //   localStorage.setItem("toppings", JSON.stringify(newToppings))
+  // }
+
+    const onChange = (event, name) => {
+    console.log(localStorage);
     let newToppings = JSON.parse(JSON.stringify(toppings));
     newToppings[name] = event;
     setToppings(newToppings);
-    localStorage.setItem("toppings", JSON.stringify(newToppings))
+    localStorage.setItem("toppings", JSON.stringify(newToppings));
+  };
 
-  }
 
   return (
 	 <div className='parent'>
@@ -145,7 +152,8 @@ function Customize({toppings, setToppings}) {
    <span className='checkmark'></span>
   </label>
   <div>
-  <button onClick={()=>navigate("../checkout", { replace: true })}>
+  <button className='proceedToCheckout' 
+  onClick={()=>navigate("../checkout",{ replace: true })}>
    Proceed to Checkout 
   </button>
   </div>

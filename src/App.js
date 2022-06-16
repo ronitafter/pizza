@@ -25,7 +25,10 @@ function App() {
     <Router>
     <Routes>
          <Route path="/" element={<Customize toppings={toppings} setToppings={setToppings}/>}/> 
-          <Route path="/checkout" element={<CheckOut/>} /> 
+          <Route path="/checkout" 
+          element={<CheckOut/>} 
+          toppings={toppings}
+          /> 
           </Routes> 
       </Router>   
       </div>
