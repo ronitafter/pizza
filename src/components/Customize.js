@@ -7,9 +7,13 @@ import Mushroom from "../assets/Mushroom.png";
 import Basil from "../assets/Basil.png";
 import Tomato from "../assets/Tomato.png";
 import { motion } from "framer-motion";
-
+import {useNavigate} from 'react-router-dom';
 
 function Customize({toppings, setToppings}) {
+
+    let navigate = useNavigate();
+
+
   const changeToppings=(name)=>{
     let newToppings = JSON.parse(JSON.stringify(toppings));
     newToppings[name] = !newToppings[name];
@@ -140,6 +144,11 @@ function Customize({toppings, setToppings}) {
               onChange(event.currentTarget.checked, "cheese")}/>
    <span className='checkmark'></span>
   </label>
+  <div>
+  <button onClick={()=>navigate("../checkout", { replace: true })}>
+   Proceed to Checkout 
+  </button>
+  </div>
    </div>
    </div>
   )
