@@ -5,7 +5,7 @@ import './Header.css';
 export default function Header() {
   return (
 	 <div className='main'>
-	 <div>Pizza Customization </div>
+	 <div className='cool'>Cool PizzA</div>
 	 </div>
   )
 }
