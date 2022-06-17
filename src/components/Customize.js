@@ -15,14 +15,13 @@ function Customize({toppings, setToppings}) {
     let navigate = useNavigate();
 
     const onChange = (event, name) => {
-    // localStorage.clear();
     console.log(localStorage);
     let newToppings = JSON.parse(JSON.stringify(toppings));
     newToppings[name] = event;
     setToppings(newToppings);
     localStorage.setItem("toppings", JSON.stringify(newToppings));
   };
-  
+
   return (
 	 <div className='parent customize'>
    <div className='child'>
