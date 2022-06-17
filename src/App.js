@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -18,7 +18,16 @@ function App() {
     olive: false,
     pineapple: false,
     tomato: false,
-  })
+  });
+
+  useEffect(()=>{
+    const data = localStorage.getItem('toppings');
+    // console.log(data)
+    if(data){
+      setToppings(JSON.parse(data));
+    }
+
+  },[])
   return (
     <div className="App">
     <Header />
@@ -26,14 +35,11 @@ function App() {
     <Routes>
          <Route path="/" element={<Customize toppings={toppings} setToppings={setToppings}/>}/> 
           <Route path="/checkout" 
-          element={<CheckOut/>} 
-          toppings={toppings}
+          element={<CheckOut toppings={toppings} />}  
           /> 
           </Routes> 
       </Router>   
       </div>
-
-
   );
 }
 

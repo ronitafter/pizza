@@ -8,42 +8,30 @@ import Basil from "../assets/Basil.png";
 import Tomato from "../assets/Tomato.png";
 import { motion } from "framer-motion";
 import {useNavigate} from 'react-router-dom';
+import './Customize.css';
 
 function Customize({toppings, setToppings}) {
 
     let navigate = useNavigate();
 
-  // const changeToppings=(name)=>{
-  //   let newToppings = JSON.parse(JSON.stringify(toppings));
-  //   newToppings[name] = !newToppings[name];
-  //   setToppings(newToppings);
-  // }
-  
-  // const onChange=(event,name)=>{
-  //   let newToppings = JSON.parse(JSON.stringify(toppings));
-  //   newToppings[name] = event;
-  //   setToppings(newToppings);
-  //   localStorage.setItem("toppings", JSON.stringify(newToppings))
-  // }
-
     const onChange = (event, name) => {
+    // localStorage.clear();
     console.log(localStorage);
     let newToppings = JSON.parse(JSON.stringify(toppings));
     newToppings[name] = event;
     setToppings(newToppings);
     localStorage.setItem("toppings", JSON.stringify(newToppings));
   };
-
-
+  
   return (
-	 <div className='parent'>
+	 <div className='parent customize'>
    <div className='child'>
    <div className='grandchild'>
     <motion.div
   initial={{ opacity: 0 }}
   animate={{
-    y: toppings["cheese"] ? 100 : -100,
-    opacity: toppings["cheese"] ? 1 : 0,
+  y: toppings["cheese"] ? 100 : -100,
+  opacity: toppings["cheese"] ? 1 : 0,
   }}
   transition={{ duration: 1 }}
   className="toppings2">
@@ -52,8 +40,8 @@ function Customize({toppings, setToppings}) {
    <motion.div
   initial={{ opacity: 0 }}
   animate={{
-    y: toppings["olive"] ? 100 : -100,
-    opacity: toppings["olive"] ? 1 : 0,
+  y: toppings["olive"] ? 100 : -100,
+  opacity: toppings["olive"] ? 1 : 0,
   }}
   transition={{ duration: 1 }}
   className="toppings2">
@@ -62,8 +50,8 @@ function Customize({toppings, setToppings}) {
   <motion.div
   initial={{ opacity: 0 }}
   animate={{
-    y: toppings["pineapple"] ? 100 : -100,
-    opacity: toppings["pineapple"] ? 1 : 0,
+  y: toppings["pineapple"] ? 100 : -100,
+  opacity: toppings["pineapple"] ? 1 : 0,
   }}
   transition={{ duration: 1 }}
   className="toppings2">
@@ -72,8 +60,8 @@ function Customize({toppings, setToppings}) {
    <motion.div
   initial={{ opacity: 0 }}
   animate={{
-    y: toppings["mushroom"] ? 100 : -100,
-    opacity: toppings["mushroom"] ? 1 : 0,
+  y: toppings["mushroom"] ? 100 : -100,
+  opacity: toppings["mushroom"] ? 1 : 0,
   }}
   transition={{ duration: 1 }}
   className="toppings2">
@@ -82,8 +70,8 @@ function Customize({toppings, setToppings}) {
   <motion.div
   initial={{ opacity: 0 }}
   animate={{
-    y: toppings["basil"] ? 100 : -100,
-    opacity: toppings["basil"] ? 1 : 0,
+  y: toppings["basil"] ? 100 : -100,
+  opacity: toppings["basil"] ? 1 : 0,
   }}
   transition={{ duration: 1 }}
   className="toppings2">
@@ -92,8 +80,8 @@ function Customize({toppings, setToppings}) {
   <motion.div
   initial={{ opacity: 0 }}
   animate={{
-    y: toppings["tomato"] ? 100 : -100,
-    opacity: toppings["tomato"] ? 1 : 0,
+  y: toppings["tomato"] ? 100 : -100,
+  opacity: toppings["tomato"] ? 1 : 0,
   }}
   transition={{ duration: 1 }}
   className="toppings2">
@@ -159,6 +147,7 @@ function Customize({toppings, setToppings}) {
   </div>
    </div>
    </div>
+   
   )
 }
 
