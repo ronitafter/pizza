@@ -22,7 +22,6 @@ function App() {
 
   useEffect(()=>{
     const data = localStorage.getItem('toppings');
-    // console.log(data)
     if(data){
       setToppings(JSON.parse(data));
     }
